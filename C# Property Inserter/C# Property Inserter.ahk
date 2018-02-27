@@ -11,7 +11,7 @@ InputBox field, , Enter field name (lower camel case):
 StringUpper property, field, T
 
 property := SubStr(property, 1, 1) . SubStr(field, 2)
-field := _%field%
+field = _%field%
 
 clipboardBackup := Clipboard
 
