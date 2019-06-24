@@ -1,4 +1,4 @@
-LanePicker()
+LanePicker(lane, character)
 {
     Loop
     {
@@ -17,30 +17,30 @@ LanePicker()
     	}
     }
     
-    PastePosition()
+    PastePosition(lane)
     
     Click 948, 130
-    Send Fiora
+    Send %character%
     
-    Loop
-    {
-    	ImageSearch, , , 439, 168, 520, 248, %A_ScriptDir%/Images/Fiora.png
-    } Until ErrorLevel != 1
-    	
-    Click 483, 210
-    
-    Loop
-    {
-    	ImageSearch, , , 745, 738, 849, 778, %A_ScriptDir%/Images/Lock In.png
-    } Until ErrorLevel != 1
-    	
-    Click 797, 759
-    
-    PastePosition()
+    Loop	
+    {	
+    	ImageSearch, , , 439, 168, 520, 248, %A_ScriptDir%/Images/%character%.png	
+    } Until ErrorLevel != 1	
+
+     Click 483, 210	
+
+     Loop	
+    {	
+    	ImageSearch, , , 745, 738, 849, 778, %A_ScriptDir%/Images/Lock In.png	
+    } Until ErrorLevel != 1	
+
+     Click 797, 759	
+
+     PastePosition(lane)
 }
     
-PastePosition()
+PastePosition(lane)
 {
 	Click 61, 853
-	Send Top{Enter}
+	Send %lane%{Enter}
 }
